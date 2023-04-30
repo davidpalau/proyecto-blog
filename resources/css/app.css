@@ -1,0 +1,10 @@
+@import 'estilos.css';
+@import'mitailwind.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* [x-cloak] {
+    display: none;
+} */
