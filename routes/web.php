@@ -4,10 +4,6 @@ use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 
-// Route::get('admin', function(){
-//     return "Hola administrador";
-// });
-
 
 Route::get('/', [PostController::class, 'index'])->name('posts.index')->name('posts.index');
 

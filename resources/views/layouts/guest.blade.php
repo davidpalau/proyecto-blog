@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="stylesheet" href="http://localhost/blog/public/app.css">
+        {{-- <link rel="stylesheet" href="http://localhost/blog/public/app.css"> --}}
         <script src="resources/js/app.js"></script>
         <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -13,9 +13,9 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body>
+    <body class="bg-slate-100">
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
