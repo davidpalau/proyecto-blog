@@ -22,7 +22,6 @@
                 <h2>
                     {{ $post->category->name }}
                 </h2>
-
                 <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-1">
 
                     @foreach ($similares as $similar)
