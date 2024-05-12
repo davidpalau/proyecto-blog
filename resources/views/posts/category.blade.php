@@ -4,6 +4,9 @@
             Categoría: {{ $category->name }}
         </h1>
         @foreach ($posts as $post)
+        <figure class="">
+            <img class="mx-auto" src="http://localhost/proyecto/1_blog/proyecto-blog/public{{ Storage::url($post->image->url) }}"  alt="">
+            </figure>
         <x-plantilla-post :post='$post'>
         </x-plantilla-post>
         @endforeach
