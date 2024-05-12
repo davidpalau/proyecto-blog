@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Mi proyecto Blog',
+    'title' => 'AdminLTE 3',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -330,18 +330,60 @@ return [
             'icon' => 'far fa-fw fa-bookmark',
             'active' => ['admin/tags*']
         ],
-        ['header' => 'OPCIONES DE BLOG'],
         [
-            'text'       => 'Lista de posts',
-            'route'        => 'admin.posts.index',
-            'icon'       => 'fas fa-fw fa-clipboard',
-            'active' => ['admin/posts*']        ],
+            'text'    => 'multilevel',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'level_one',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'level_one',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'level_two',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'level_two',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'text' => 'level_one',
+                    'url'  => '#',
+                ],
+            ],
+        ],
+        ['header' => 'labels'],
         [
-            'text'       => 'Crear nuevo post',
-            'route'        => 'admin.posts.create',
-            'icon'       => 'fas fa-fw fa-file',
-            'active' => ['admin/posts']           ],
-
+            'text'       => 'important',
+            'icon_color' => 'red',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'warning',
+            'icon_color' => 'yellow',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'information',
+            'icon_color' => 'cyan',
+            'url'        => '#',
+        ],
     ],
 
     /*

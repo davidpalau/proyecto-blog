@@ -2,7 +2,7 @@
 <article class="mb-8">
     <div class="grid md:grid-cols-4 grid-cols-1">
     <img class="w-50 h-36 object-cover object-center"
-     src="http://localhost/blog/public/{{$post->image->url}}" alt="">
+    <img class="mx-auto" src="http://localhost/proyecto/1_blog/proyecto-blog/public{{ Storage::url($post->image->url) }}"  alt="">
 
         <div class="grid p-4 md:pl-5 md:col-span-3 font-bold text-xl mb-2">
             <h2 class=" text-cyan-500">{{ $post->name }}</h2>
