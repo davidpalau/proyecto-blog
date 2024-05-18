@@ -2,7 +2,7 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center">
-          <a href="http://localhost/proyecto/1_blog/proyecto-blog/public/" class="flex-shrink-0">
+          <a href="http://localhost/proyecto/4_blog/proyecto-blog/public/" class="flex-shrink-0">
             <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
           </a>
           <div class="hidden md:block" >
