@@ -1,3 +1,4 @@
+<article class="bg-MyColor">
   <nav class="bg-white"  x-data="{open:false}">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
@@ -6,7 +7,6 @@
             <img class="h-12 w-18" src="/img/logomyblog.png" alt="Your Company">
             <img src="" alt="">
           </a>
-
           <div class="hidden md:block" >
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
@@ -17,7 +17,6 @@
             </div>
           </div>
         </div>
-
         @auth
           <div class="hidden md:block">
           <div class="ml-4 flex items-center md:ml-6">
@@ -130,3 +129,15 @@
       </div>
     </div>
   </nav>
+            <!--Portada-->
+
+            <div class="container-all" id="move-content">
+
+
+                <div class="blog-container-cover">
+                    <div class="container-info-cover">
+                        <h1>¡Encuentra tu tema interes!</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aliquam quis fuga beatae blanditiis assumenda.</p>
+                    </div>
+                </div>
+</article>

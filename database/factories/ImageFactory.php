@@ -18,9 +18,8 @@ class ImageFactory extends Factory
     {
 
         return [
-            // 'url' => str_replace('public/storage/posts/', '', $this->faker->image('public/storage/posts', 640, 480, null, true)),
-                // 'url' => str_replace("public/", '' ,$this->faker->image('public/storage/posts', 640, 480, null, true))
-                'url' => 'posts/' . $this->faker->image('public/storage/posts',640,480,null,false),
+
+                'url' => 'posts/' . $this->faker->image('public/storage/posts',480,360,null,false),
             ];
     }
 }

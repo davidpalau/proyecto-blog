@@ -1,4 +1,5 @@
 <x-app-layout>
+
     <div class="container py-8">
         <h1 class="text-4xl pl-6 font-bold text-gray-600">
             {{ $post->name}}
@@ -6,7 +7,6 @@
         <div class="grid grid-cols-4 text-lg pl-6 text-gray-500 mb-2 ">
           <p class="text-justify lg:pr-96 col-span-4"> {{ $post->extract }}</p>
         </div>
-
         <div class="grid grid-cols-1 lg:grid-cols-3">
             <div class="col-span-2">
                     <figure class="">

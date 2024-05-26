@@ -1,25 +1,25 @@
 <x-app-layout>
-    <div class=" bg-blue-300">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-
+    <div class="container-all" id="move-content">
+        <div class="posts">
             @foreach ($posts as $post)
-              <img class="" src="{{ Storage::url($post->image->url) }}"  alt="">
-              {{-- <img class="" src="http://localhost/proyecto/4_blog/proyecto-blog/public{{ Storage::url($post->image->url) }}"  alt=""> --}}
+                <div class="post" data-category="CSS">
+                    <div class="ctn-img">
+                        <img class="" src="{{ Storage::url($post->image->url) }}" alt="">
+                    </div>
+                    <h2>{{ $post->name }}</h2>
+                    <p><span>{{ $post->extract }} <a href="{{ route('posts.show', $post) }}" class="">
+                            Leer más</a><br></span>
+                    <ul class="ctn-tag">
+                        @foreach ($post->tags as $tag)
+                            <li> <a href="{{ $tag->url }}">{{ $tag->name }}</a>
+                            </li>
 
-                <article class="w-full h-full px-8 flex flex-col justify-center">
-                    <p>{{($post->name) }} :  {{$post->extract}} <a href="{{ route('posts.show', $post) }}" class="">
-                        Leer más</a><br> Etiquetas:
-                 @foreach ($post->tags as $tag)
-                        <a href="" class="inline-block px-3 bg-slate-500 text-white rounded-lg">{{$tag->name}}</a>
-                 @endforeach
-                    </p>
-                </article>
             @endforeach
-
-
+        </ul>
+        </div>
+        @endforeach
     </div>
-    </div>
 
-    <div class="mt-4">{{$posts->links()}}</div>
+    <div class="mt-4">{{ $posts->links() }}</div>
 
 </x-app-layout>
