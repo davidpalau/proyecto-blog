@@ -10,7 +10,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3">
             <div class="col-span-2">
                     <figure class="">
-                    <img class="mx-auto" src="http://localhost/proyecto/4_blog/proyecto-blog/public{{ Storage::url($post->image->url) }}"  alt="">
+                    <img class="mx-auto" src="{{ Storage::url($post->image->url) }}"  alt="">
                     </figure>
                     <div class="p-10">
                         {{ $post->body }}
@@ -26,7 +26,7 @@
                     @foreach ($similares as $similar)
                     <div class="px-4">
                         <a href="{{ route('posts.show', $similar) }}">
-                    <img class="w-36 h-20 mt-8 object-cover object-center" src="http://localhost/proyecto/4_blog/proyecto-blog/public{{ Storage::url($post->image->url) }}" alt="">
+                    <img class="w-36 h-20 mt-8 object-cover object-center" src="{{ Storage::url($post->image->url) }}" alt="">
                     <li class="w-36 h-20 object-cover object-center">
                         {{$similar->name}}</a></li>
                 </div>

@@ -1,16 +1,18 @@
-  <nav class="bg-gray-800"  x-data="{open:false}">
+  <nav class="bg-white"  x-data="{open:false}">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center">
-          <a href="http://localhost/proyecto/4_blog/proyecto-blog/public/" class="flex-shrink-0">
-            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+          <a href="/" class="flex-shrink-0">
+            <img class="h-12 w-18" src="/img/logomyblog.png" alt="Your Company">
+            <img src="" alt="">
           </a>
+
           <div class="hidden md:block" >
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
                 @foreach ($categories as $category)
-                <a href="{{ route('posts.category', $category) }}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">{{ $category->name }}</a>
+                <a href="{{ route('posts.category', $category) }}" class=" text-MyColor hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">{{ $category->name }}</a>
                 @endforeach
             </div>
           </div>
@@ -55,7 +57,7 @@
 
                     <x-responsive-nav-link href="{{ route('logout') }}"
                                    @click.prevent="$root.submit();">
-                        {{-- {{ __('Log Out') }} --}}
+                        {{ __('Log Out') }}
                     Cerrar sesión
                 </x-responsive-nav-link >
                 </form>
@@ -91,7 +93,7 @@
     <div class="md:hidden" id="mobile-menu" x-show="open" x-on:click.away="open = false">
       <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        {{-- <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a> --}}
+        <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
         @foreach ($categories as $category)
         <a href="{{ route('posts.category', $category) }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">M{{ $category->name }}</a>
         @endforeach
@@ -118,10 +120,9 @@
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}" x-data>
                     @csrf
-
                     <x-responsive-nav-link href="{{ route('logout') }}"
                                    @click.prevent="$root.submit();">
-                        {{-- {{ __('Log Out') }} --}}
+                        {{ __('Log Out') }}
                         Cerrar sesión
                     </x-responsive-nav-link>
                 </form>
