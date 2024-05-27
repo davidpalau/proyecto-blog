@@ -9,7 +9,7 @@ use App\Models\Tag;
 class PostController extends Controller
 {
     public function index(){
-        $posts = Post::where('status', 2)-> latest('id')->paginate(6);
+        $posts = Post::where('status', 2)-> latest('id')->paginate(8);
         return view('posts.index', compact('posts'));
     }
 
@@ -29,12 +29,12 @@ class PostController extends Controller
         $posts = Post::where('category_id', $category -> id)
         ->where('status', 2)
         ->latest('id')
-        ->paginate(4);
+        ->paginate(8);
         return view('posts.category', compact('posts', 'category'));
 
 }
     public function tag(Tag $tag) {
-        $posts = $tag->posts()->where('status',2)->latest('id')->paginate(4);
+        $posts = $tag->posts()->where('status',2)->latest('id')->paginate(8);
         return view('posts.tag', compact('posts', 'tag'));
     }
 }
