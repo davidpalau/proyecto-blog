@@ -1,15 +1,39 @@
 <x-app-layout>
-    <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 py-8">
-        <h1 class="text-center text-2xl">
-            Categoría: {{ $category->name }}
-        </h1>
-        @foreach ($posts as $post)
-        <figure class="">
-            <img class="mx-auto" src="http://localhost/proyecto/4_blog/proyecto-blog/public{{ Storage::url($post->image->url) }}"  alt="">
-            </figure>
-        <x-plantilla-post :post='$post'>
-        </x-plantilla-post>
-        @endforeach
-            <div class="mt-4">{{$posts->links()}}</div>
-    </div>
-</x-app-layout>
+                <!--Portada-->
+
+                <div class="container-all" id="move-content">
+
+
+                    <div class="blog-container-cover">
+                        <div class="container-info-cover">
+                            <h1>
+                                Categoría: {{ $category->name }}
+                            </h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aliquam quis fuga beatae blanditiis assumenda.</p>
+                        </div>
+                    </div>
+                </article>
+                <div class="container-all" id="move-content">
+                    <div class="posts">
+                        @foreach ($posts as $post)
+                            <div class="post" data-category="CSS">
+                                <div class="ctn-img">
+                                    <img class="" src="{{ Storage::url($post->image->url) }}" alt="">
+                                </div>
+                                <h2>{{ $post->name }}</h2>
+                                <p><span>{{ $post->extract }} <a href="{{ route('posts.show', $post) }}" class="">
+                                        Leer más</a><br></span>
+                                <ul class="ctn-tag">
+                                    @foreach ($post->tags as $tag)
+                                        <li> <a href="{{ $tag->url }}">{{ $tag->name }}</a>
+                                        </li>
+
+                        @endforeach
+                    </ul>
+                    </div>
+                    @endforeach
+                </div>
+
+                <div class="mt-4">{{ $posts->links() }}</div>
+
+            </x-app-layout>
