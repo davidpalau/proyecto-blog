@@ -10,7 +10,7 @@
           <div class="hidden md:block" >
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-normal aria-current="page" " >Dashboard</a>
+              <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-normal aria-current="page">Dashboard</a>
                 @foreach ($categories as $category)
                 <a href="{{ route('posts.category', $category) }}" class=" text-MyColor hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-serif font-normal">{{ $category->name }}</a>
                 @endforeach
@@ -66,8 +66,8 @@
         </div>
         @else
         <div>
-            <a href="{{ route('login') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>
-            <a href="{{ route('register') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Resgister</a>
+            <a href="{{ route('login') }}" class="text-neutral-500 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>
+            <a href="{{ route('register') }}" class="text-neutral-500  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Resgister</a>
         </div>
         @endauth
 

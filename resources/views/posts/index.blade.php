@@ -17,12 +17,12 @@
                     <div class="ctn-img">
                         <img class="" src="{{ Storage::url($post->image->url) }}" alt="">
                     </div>
-                    <h2 class="text-center font-sans text-neutral-600 font-semibold">{{ $post->name }}</h2>
-                    <p><span>{{ $post->extract }} <a href="{{ route('posts.show', $post) }}" class="">
+                    <h2>{{ $post->name }}</h2>
+                    <p><span>{{ $post->extract }} <br> <a  class="bg-MyColor text-white rounded-md px-2 py-1 text-sm font-normal" href="{{ route('posts.show', $post) }}" class=" font-semibold text-blue-400">
                             Leer más</a><br></span>
-                    <ul class="ctn-tag">
+                         <ul class="ctn-tag">
                         @foreach ($post->tags as $tag)
-                            <li> <a href="{{ $tag->url }}">{{ $tag->name }}</a>
+                            <li class="rounded-xl text-slate-600 font-medium"> <a href="{{ $tag->url }}">{{ $tag->name }}</a>
                             </li>
 
             @endforeach

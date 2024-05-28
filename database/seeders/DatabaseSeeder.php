@@ -19,12 +19,18 @@ class DatabaseSeeder extends Seeder
     public function run(): void
 
     {
+
         Storage::makeDirectory('posts');
         Storage::deleteDirectory('posts');
+                // Llamar a los seeders individuales
         $this->call(UserSeeder::class);
-        Category::factory(4)->create();
-        Tag::factory(8)->create();
+        $this->call(CategorySeeder::class); // Añadir el CategorySeeder
+        $this->call(TagSeeder::class); // Asegúrate de tener un seeder para tags si no lo tienes, créalo
         $this->call(PostSeeder::class);
+        // $this->call(UserSeeder::class);
+        // $this->call(CategorySeeder::class);
+        //         Tag::factory(8)->create();
+        // $this->call(PostSeeder::class);
 
         // \App\Models\User::factory(10)->create();
 

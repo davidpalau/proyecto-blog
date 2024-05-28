@@ -15,11 +15,9 @@ class CategoryFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-    {
-        $name = $this->faker->unique()->word(20);
-        return [
-            'name' => $name,
-            'slug'=> Str::slug($name),
+    {        return [
+            'name' =>  $this->faker->word,
+            'slug'=>  Str::slug($this->faker->word),
         ];
     }
 }

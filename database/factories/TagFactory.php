@@ -16,7 +16,7 @@ class TagFactory extends Factory
      */
     public function definition()
 {
-    $name = $this-> faker->unique()->word(12);
+    $name = $this->faker->randomElement(['MySQL', 'HTML5', 'CSS3', 'Layout','Frontend ','Backend', 'framework ']);
     return[
         'name'=> $name,
         'slug'=> Str::slug($name)
