@@ -1,7 +1,18 @@
 <x-app-layout>
+    <!--Portada-->
+
+    <div class="container-all" id="move-content">
+      <div class="blog-container-cover">
+          <div class="container-info-cover">
+
+              <h1>!Todos los post en My Blog!</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aliquam quis fuga beatae blanditiis assumenda.</p>
+          </div>
+      </div>
+</article>
 
     <div class="container py-8">
-        <h1 class="text-4xl pl-6 font-bold text-gray-600">
+        <h1 class="text-4xl pl-6 font-bold text-gray-600 ">
             {{ $post->name}}
         </h1>
         <div class="grid grid-cols-4 text-lg pl-6 text-gray-500 mb-2 ">

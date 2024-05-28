@@ -17,7 +17,7 @@
                     <div class="ctn-img">
                         <img class="" src="{{ Storage::url($post->image->url) }}" alt="">
                     </div>
-                    <h2>{{ $post->name }}</h2>
+                    <h2 class="text-center font-sans text-neutral-600 font-semibold">{{ $post->name }}</h2>
                     <p><span>{{ $post->extract }} <a href="{{ route('posts.show', $post) }}" class="">
                             Leer más</a><br></span>
                     <ul class="ctn-tag">

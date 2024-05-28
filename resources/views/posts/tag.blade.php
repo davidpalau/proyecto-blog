@@ -9,7 +9,6 @@
                 <h1>
                     Etiqueta: {{ $tag->name }}
                 </h1>
-
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aliquam quis fuga beatae blanditiis
                     assumenda.</p>
             </div>
