@@ -7,9 +7,9 @@
         <div class="blog-container-cover">
             <div class="container-info-cover">
                 <h1>
-                    Categoría: {{ $category->name }}
+                 {{ $tag->name }}
                 </h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aliquam quis fuga beatae blanditiis assumenda.</p>
+                <p>{{ $tag->summary }}</p>
             </div>
         </div>
     </article>
@@ -25,7 +25,7 @@
                             Leer más</a><br></span>
                          <ul class="ctn-tag">
                         @foreach ($post->tags as $tag)
-                            <li class="rounded-xl text-slate-600 font-medium"> <a href="{{ $tag->url }}">{{ $tag->name }}</a>
+                            <li class="rounded-xl text-slate-600 font-medium"> <a href="{{ route('posts.tag', $tag) }}">{{ $tag->name }}</a>
                             </li>
 
             @endforeach

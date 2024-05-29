@@ -1,18 +1,15 @@
 <x-app-layout>
     <!--Portada-->
 
-    <div class="container-all" id="move-content">
-      <div class="blog-container-cover">
-          <div class="container-info-cover">
-
-              <h1>!Todos los post en My Blog!</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aliquam quis fuga beatae blanditiis assumenda.</p>
-          </div>
+    <div>
+      <div class=" bg-MyColor m-5 p-8">
       </div>
+    </div>
 </article>
 
     <div class="container py-8">
-        <h1 class="text-4xl pl-6 font-bold text-gray-600 ">
+        <div class="w-full max-w-7xl p-4 bg-white border border-gray-200 shadow sm:p-6">
+            <h1 class=" text-4xl pl-6 font-bold text-gray-600 ">
             {{ $post->name}}
         </h1>
         <div class="grid grid-cols-4 text-lg pl-6 text-gray-500 mb-2 ">
@@ -28,14 +25,15 @@
                     </div>
             </div>
             <aside>
-                <div class="">
-                <h2>
+                <div class="ml-12">
+                <h2 class="ml-12">
                     {{ $post->category->name }}
                 </h2>
-                <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-1">
+                <ul class="ml-10 shadow-inner grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-1">
 
                     @foreach ($similares as $similar)
-                    <div class="px-4">
+                    <br>
+                    <div class="px-8">
                         <a href="{{ route('posts.show', $similar) }}">
                     <img class="w-36 h-20 mt-8 object-cover object-center" src="{{ Storage::url($post->image->url) }}" alt="">
                     <li class="w-36 h-20 object-cover object-center">

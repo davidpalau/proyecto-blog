@@ -16,11 +16,18 @@ class CategorySeeder extends Seeder
             'Desarrollo software',
             'Bases de datos'
         ];
+        $summaries = [
+            'Es la categoría dedicada al diseño y maquetación de sitios web.',
+            'Es la categoría enfocada en el desarrollo de aplicaciones y servicios web.',
+            'Es la categoría sobre el desarrollo de software en general.',
+            'Es la categoría que trata sobre bases de datos y su gestión.'
+        ];
 
-        foreach ($categories as $category) {
+        foreach ($categories as $index => $category) {
             Category::create([
                 'name' => $category,
                 'slug' => Str::slug($category),
+                'summary' => $summaries[$index],
             ]);
         }
     }

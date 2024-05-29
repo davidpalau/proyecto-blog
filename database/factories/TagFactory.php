@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Factories;
+
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -15,11 +16,13 @@ class TagFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition()
-{
-    $name = $this->faker->randomElement(['MySQL', 'HTML5', 'CSS3', 'Layout','Frontend ','Backend', 'framework ']);
-    return[
-        'name'=> $name,
-        'slug'=> Str::slug($name)
-    ];
-}
+    {
+
+        $name = $this->faker->randomElement(['PHP','JavaScript','HTML5', 'CSS3', 'Laravel', 'Vue.js', 'React', 'Node.js']);
+        return [
+            'name' => $name,
+            'slug' => Str::slug($name),
+            'summary' => $this->faker->sentence,
+        ];
+    }
 }
