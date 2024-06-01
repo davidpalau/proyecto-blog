@@ -19,7 +19,7 @@ class PostController extends Controller
                     ->where('status', 2)
                     ->where('id','!=', $post-> id)
                     ->latest('id')
-                    ->take(6)
+                    ->take(4)
                     ->get();
         return view('posts.show', compact('post', 'similares'));
 

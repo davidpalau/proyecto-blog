@@ -5,10 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="http://localhost/blog/public/app.css">
-        <link rel="stylesheet" href="/css/principal.css">
-        <link rel="stylesheet" href="/css/articulo.css">
-        <link rel="stylesheet" href="/css/blog.css">
+        <link rel="stylesheet" href="http://localhost/blog/public/css/principal.css">
+        <link rel="stylesheet" href="http://localhost/blog/public/css/articulo.css">
+        <link rel="stylesheet" href="http://localhost/blog/public/css/blog.css">
         <script src="resources/js/app.js"></script>
+        <script src="http://localhost/blog/public/js/script.js"></script>
+
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->

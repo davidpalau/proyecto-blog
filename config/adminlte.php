@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Mi proyecto Blog',
+    'title' => 'My Blog, Project',
     'title_prefix' => '',
     'title_postfix' => '',
 

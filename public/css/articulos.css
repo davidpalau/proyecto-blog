@@ -98,7 +98,7 @@ article img{
 
 /*Aside de los articulos de relacionados*/
 
-.container-aside aside{
+aside{
   width: 320px;
   border-right: 6px;
   box-shadow: 0 0 20px -20px black;

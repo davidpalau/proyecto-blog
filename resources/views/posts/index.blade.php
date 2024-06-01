@@ -10,7 +10,7 @@
                     assumenda.</p>
             </div>
         </div>
-        </article>
+        </article >
         <div class="container-all" id="move-content">
             <div class="posts">
                 @foreach ($posts as $post)

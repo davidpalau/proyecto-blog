@@ -6,11 +6,24 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-
+        <script src="/js/script.js"></script>
         <link rel="stylesheet" href="/css/principal.css">
         <link rel="stylesheet" href="/css/articulo.css">
         <link rel="stylesheet" href="/css/blog.css">
+        {{-- <style>
+        aside .myAside{
+            width: 300px;
+            border-right: 6px;
+            box-shadow: 0 0 20px -20px black;
+            /* border-radius: 6px; */
+            overflow: hidden;
+            /* margin-left: 40px;
+            margin-bottom: 40px;
+            padding-bottom: 20px; */
+            background: #fff;
+          }
 
+        </style> --}}
         <link rel="stylesheet" href="http://localhost/proyecto/4_blog/proyecto-blog/public/app.css">
         <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -48,7 +61,7 @@
         @stack('modals')
 
         @livewireScripts
-    </body>
+
 
 <br>
 <footer class="bg-white dark:bg-MyColor">
@@ -158,5 +171,5 @@
       </div>
     </div>
 </footer>
-
+</body>
 </html>
