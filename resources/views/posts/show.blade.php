@@ -38,17 +38,17 @@
 
                         @foreach ($similares as $similar)
                             <br>
-                            <div class="mb-4">
-                                <a class="flex" href="{{ route('posts.show', $similar) }}">
-                                    <img class="w-auto mt-8 object-cover object-center"
+                            <div class="mb-4  bg-gray-100  rounded-b-2xl mr-6">
+                                <a class="" href="{{ route('posts.show', $similar) }}">
+                                    <img class="w-full object-cover object-center"
                                         src="{{ Storage::url($similar->image->url) }}" alt="">
-                                    <p class="bg-white border-5 border-gray-200 shadowmt-5 object-cover object-center">
+                                    <p class="p-3 inline-block w-full object-cover object-center">
                                         {{ $similar->name }}
-                                        <span class="bg-MyColor text-white rounded-md px-2 py-1 text-sm font-normal"
+                                        <button class="btn bg-MyColor text-white text-end rounded-md px-2 py-1 text-sm font-normal"
                                             href="{{ route('posts.show', $similar) }}"
                                             class=" font-semibold text-blue-400">
                                             Leer más
-                                </a></p></span>
+                                </a></p></button>
                             </div>
                         @endforeach
                     </ul>
