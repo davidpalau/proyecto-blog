@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Proyecto</b>BLOG',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Proyecto</b>DAW',
+    'logo_img' => 'vendor/adminlte/dist/img/logomyblog.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -186,14 +186,14 @@ return [
     |
     */
 
-    'classes_body' => '',
+    'classes_body' => 'bg-MyColor',
     'classes_brand' => '',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-primary elevation-4',
-    'classes_sidebar_nav' => '',
+    'classes_sidebar_nav' => 'nav',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
@@ -335,12 +335,14 @@ return [
             'text'       => 'Lista de posts',
             'route'        => 'admin.posts.index',
             'icon'       => 'fas fa-fw fa-clipboard',
-            'active' => ['admin/posts*']        ],
+            'active' => ['admin/posts*']
+        ],
         [
             'text'       => 'Crear nuevo post',
             'route'        => 'admin.posts.create',
             'icon'       => 'fas fa-fw fa-file',
-            'active' => ['admin/posts']           ],
+            'active' => ['admin/posts']
+        ],
 
     ],
 
@@ -496,5 +498,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

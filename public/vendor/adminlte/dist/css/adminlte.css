@@ -56,7 +56,9 @@ html {
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
+
 }
+nav{  background-color: #3C88A3!important;}
 
 body {
   margin: 0;
