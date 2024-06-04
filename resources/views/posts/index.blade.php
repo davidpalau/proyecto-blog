@@ -16,7 +16,7 @@
                 @foreach ($posts as $post)
                     <div class="post" data-category="CSS">
                         <div class="ctn-img">
-                            <img class="" src="{{ Storage::url($post->image->url) }}" alt="">
+                            <img class="" src="{{Storage::url($post->image->url) }}" alt="">
                         </div>
                         <h2>{{ $post->name }}</h2>
                         <p><span>{{ $post->extract }} <br> <a
