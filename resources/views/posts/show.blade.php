@@ -1,5 +1,5 @@
 
-<x-app-layout>
+ <x-app-layout>
     <!--Portada-->
 
     <div>
@@ -8,9 +8,9 @@
     </div>
     </article>
 
-    <div class="flex flex-row container py-8">
+    <div class="flex flex-row container pr-5">
 
-        <div class="w-2/3 max-w-7xl p-4 bg-white border mr-6 border-gray-200 shadow sm:p-6">
+        <div class="w-3/4 max-w-7xl p-4 rounded-lg bg-white border mr-6 border-gray-200 shadow sm:p-6">
             <h1 class="text-4xl pl-6 font-bold text-gray-600 ">
                 {{ $post->name }}
             </h1>
@@ -26,28 +26,33 @@
                         {{ $post->body }}
                     </div>
                 </div>
-
+                <ul class="ctn-tag">
+                    @foreach ($post->tags as $tag)
+                        <li class="rounded-xl text-slate-600 font-medium"> <a
+                                href="{{ route('posts.tag', $tag) }}">{{ $tag->name }}</a>
+                        </li>
+                    @endforeach
+                </ul>
 
             </div>
         </div>
-                <aside class="w-1/3 max-w-7xl p-4 bg-white border border-gray-200 shadow sm:p-6">
+                <aside class="w-1/3 max-w-7xl  sm:p-6">
                 <div class="ml-12">
-                    <h2 class="ml-12">
+                    <h2 class="text-4xl pl-6 font-bold text-MyColor ">
                         {{ $post->category->name }}
                     </h2>
-                    <ul class="ml-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-1">
+                    <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-1">
 
                         @foreach ($similares as $similar)
                             <br>
-                            <div class="mb-4">
-                                <a class="flex" href="{{ route('posts.show', $similar) }}">
-                                    <img class="w-auto mt-8 object-cover object-center"
+                            <div class="">
+                                <a class="w-full" href="{{ route('posts.show', $similar) }}">
+                                    <img class="w-full rounded-t-lg mt-18 object-cover object-center"
                                         src="{{ Storage::url($similar->image->url) }}" alt="">
-                                    <p class="bg-white border-5 border-gray-200 shadowmt-5 object-cover object-center">
+                                    <p class="inline-flex w-full px-3 rounded-b-lg bg-white border border-gray-200 shadow py-2 object-cover object-center">
                                         {{ $similar->name }}
-                                        <span class="bg-MyColor text-white rounded-md px-2 py-1 text-sm font-normal"
-                                            href="{{ route('posts.show', $similar) }}"
-                                            class=" font-semibold text-blue-400">
+                                        <span class="ml-1 mt-1 inline-flex bg-MyColor  text-white rounded-md px-2 py-1 text-sm font-normal"
+                                          <a class="text-blue-400" href="{{ route('posts.show', $similar) }}">
                                             Leer más
                                 </a></p></span>
                             </div>
@@ -57,4 +62,3 @@
             </aside>
         </div>
 </x-app-layout>
-
