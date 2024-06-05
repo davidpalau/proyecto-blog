@@ -15,13 +15,12 @@
             <div class="posts">
                 @foreach ($posts as $post)
                     <div class="post" data-category="CSS">
-                        <div class="ctn-img">
-                            <img class="" src="{{Storage::url($post->image->url) }}" alt="">
+                        <div class="ctn-img mb-6 ">
+                            <img class=" " src="{{Storage::url($post->image->url) }}" alt="">
                         </div>
-                        <h2>{{ $post->name }}</h2>
-                        <p><span>{{ $post->extract }} <br> <a
-                                    class="bg-MyColor text-white rounded-md px-2 py-1 text-sm font-normal"
-                                    href="{{ route('posts.show', $post) }}" class=" font-semibold text-blue-400">
+                        <h2 class="text-9xl pl-6 font-bold text-slate-600">{{ $post->name }}</h2>
+                        <p><span class="h-auto">{{ $post->extract }}<br><a class="bg-MyColor text-white rounded-md px-2 py-1 text-sm font-normal"
+                                    href="{{ route('posts.show', $post) }}">
                                     Leer más</a><br></span>
                         <ul class="ctn-tag">
                             @foreach ($post->tags as $tag)

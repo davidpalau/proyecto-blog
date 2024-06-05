@@ -4,8 +4,9 @@ namespace Database\Factories;
 
 use App\Models\Category;
 use App\Models\User;
-use Illuminate\Support\Str;
+use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
@@ -20,14 +21,17 @@ class PostFactory extends Factory
     public function definition(): array
     {
         $name = $this->faker->unique()->sentence();
+        $paragraphs = $this->faker->paragraphs(rand(5, 10)); // Generate 5 to 10 paragraphs
+        $body = implode("\n\n", $paragraphs); // Join paragraphs with double line breaks
+
         return [
-        'name'=> $name,
-        'slug' => Str::slug($name),
-        'extract' => $this->faker->text(350),
-        'body' => $this->faker->text(2000),
-        'status' => $this->faker->randomElement([1,2]),
-        'category_id'=> Category::all()->random()->id,
-        'user_id'=> User::all()->random()->id
+            'name'=> $name,
+            'slug' => Str::slug($name),
+            'extract' => $this->faker->text(350),
+            'body' => "Introdución: \n". ($this->faker->text(750)). "\n\n Desarrollo: \n". $body . '\n\n Conclusiones: \n' . ($this->faker->text(1000)),
+            'status' => $this->faker->randomElement([1,2]),
+            'category_id'=> Category::all()->random()->id,
+            'user_id'=> User::all()->random()->id
 
 
         ];
