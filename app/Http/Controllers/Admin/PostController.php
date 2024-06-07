@@ -36,21 +36,30 @@ class PostController extends Controller
          $data = $request->all();
          $data['user_id'] = auth()->id();
 
+         // Crear un nuevo post con los datos proporcionados
          $post = Post::create($data);
 
+         // Manejar la carga de archivos si existe
          if ($request->file('file')) {
-             $url = Storage::put('posts', $request->file('file'));
+             // Almacenar el archivo en la carpeta 'posts' del directorio 'public'
+             $path = $request->file('file')->move(public_path('storage/posts'), $request->file('file')->getClientOriginalName());
+             $url = 'posts/' . $request->file('file')->getClientOriginalName();
+
+             // Crear una relación de imagen para el post
              $post->image()->create([
                  'url' => $url
              ]);
          }
 
-         if ($request->tags) {
+         // Adjuntar etiquetas si se proporcionaron en la solicitud
+         if ($request->has('tags')) {
              $post->tags()->attach($request->tags);
          }
 
+         // Limpiar la caché
          Cache::flush();
 
+         // Redirigir al índice de posts con un mensaje de éxito
          return redirect()->route('admin.posts.index')->with('info', 'El post se creó con éxito');
      }
     public function index()
