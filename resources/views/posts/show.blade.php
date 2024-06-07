@@ -15,12 +15,12 @@
                 {{ $post->name }}
             </h1>
             <div class="text-lg pl-6 text-gray-500">
-                <p class="text-justify lg:pr-6 col-span-4">{{ $post->extract }} </p>
+                <p class="text-justify lg:pr-6 col-span-4">{!! $post->extract !!}</p>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3">
                 <div class="col-span-3">
                     <figure class=""> <br>
-                        <img class="w-full mx-auto" src="{{ Storage::url($post->image->url) }}" alt="">
+                        <img src="{{ $post->image ? Storage::url($post->image->url) :asset('img/demo/5.jpg') }}" alt="">
                     </figure>
                     <div class="p-10">
                         {!! nl2br($post->body) !!}

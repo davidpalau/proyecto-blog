@@ -44,4 +44,4 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::delete('tags/{tag}', [TagController::class, 'destroy'])->name('tags.destroy');
 });
 
-Route::resource('posts', PostController::class)->except('show')->names('admin.posts');
+Route::resource('admin/posts', PostController::class)->names('admin.posts');

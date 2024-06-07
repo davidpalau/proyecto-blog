@@ -11,7 +11,6 @@ use App\Models\Tag;
 use Illuminate\Support\Facades\Cache;
 
 use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -30,10 +29,36 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function store(PostRequest $request)
+     {
+         // Agregar el ID del usuario autenticado a los datos de la solicitud
+         $data = $request->all();
+         $data['user_id'] = auth()->id();
+
+         $post = Post::create($data);
+
+         if ($request->file('file')) {
+             $url = Storage::put('posts', $request->file('file'));
+             $post->image()->create([
+                 'url' => $url
+             ]);
+         }
+
+         if ($request->tags) {
+             $post->tags()->attach($request->tags);
+         }
+
+         Cache::flush();
+
+         return redirect()->route('admin.posts.index')->with('info', 'El post se creó con éxito');
+     }
     public function index()
     {
-        return view('admin.posts.index');
+        $posts = Post::all(); // O ajusta esto según tu lógica
+        return view('admin.posts.index', compact('posts'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -124,24 +149,5 @@ class PostController extends Controller
         Cache::flush();
         return redirect()->route('admin.posts.index')->with('info','El post se elimino con éxito');
     }
-    public function store(PostRequest $request)
-{
-    // Agregar el ID del usuario autenticado a los datos de la solicitud
-    $data = $request->all();
-    $data['user_id'] = Auth::id();
 
-    $post = Post::create($data);
-
-    if ($request->file('file')) {
-        $url = Storage::put('posts', $request->file('file'));
-        $post->image()->create([
-            'url' => $url
-        ]);
-    }
-
-    if ($request->tags) {
-        $post->tags()->attach($request->tags);
-    }
-
-}
 }

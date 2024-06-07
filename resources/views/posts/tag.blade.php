@@ -9,7 +9,7 @@
                 <h1>
                  {{ $tag->name }}
                 </h1>
-                <p>{{ $tag->summary }}</p>
+                <p>{!! $tag->summary !!}</p>
             </div>
         </div>
     </article>
@@ -18,7 +18,7 @@
             @foreach ($posts as $post)
                 <div class="post" data-category="CSS">
                     <div class="ctn-img">
-                        <img class="" src="{{ Storage::url($post->image->url) }}" alt="">
+                        <img src="{{ $post->image ? Storage::url($post->image->url) :asset('img/demo/5.jpg') }}" alt="">
                     </div>
                     <h2 class="text-9xl pl-6 font-bold text-slate-600">{{ $post->name }}</h2>
                     Leer más</a><br></span>
