@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
+use App\Http\Requests\StorePostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Cache;
 
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -51,27 +53,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostRequest $request)
-    {
-        $post = Post::create($request->all());
 
-        if($request->file('file')){
-            $url =  Storage::put('posts',$request->file('file'));
-            $post->image()->create([
-                'url' => $url
-            ]);
-        }
-
-
-
-        if($request->tags){
-            $post->tags()->attach($request->tags);
-        }
-
-        Cache::flush();
-
-        return redirect()->route('admin.posts.edit',$post);
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -142,4 +124,24 @@ class PostController extends Controller
         Cache::flush();
         return redirect()->route('admin.posts.index')->with('info','El post se elimino con éxito');
     }
+    public function store(PostRequest $request)
+{
+    // Agregar el ID del usuario autenticado a los datos de la solicitud
+    $data = $request->all();
+    $data['user_id'] = Auth::id();
+
+    $post = Post::create($data);
+
+    if ($request->file('file')) {
+        $url = Storage::put('posts', $request->file('file'));
+        $post->image()->create([
+            'url' => $url
+        ]);
+    }
+
+    if ($request->tags) {
+        $post->tags()->attach($request->tags);
+    }
+
+}
 }

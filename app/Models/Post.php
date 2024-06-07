@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    protected $fillable = ['name', 'slug', 'category_id', 'status', 'extract', 'body', 'user_id'];
+
     //Relación una a muchos inversa
     public function user(){
         return $this->belongsTo(User::class);
