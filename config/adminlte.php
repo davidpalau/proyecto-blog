@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Mi proyecto Blog',
+    'title' => 'MyBlog',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -292,9 +292,9 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
+            'type'   => 'search',
+            'search'    => true,
+            'topnav' => true,
         ],
         [
             'type'         => 'fullscreen-widget',
@@ -313,8 +313,14 @@ return [
         ],
         [
             'text'        => 'Dashboard',
-            'url'         => 'admin',
+            'route'         => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
+
+        ],
+        [
+            'text'        => 'Usuarios',
+            'route'         => 'admin.users.index',
+            'icon'        => 'fas fa-users fa-fw',
 
         ],
         ['header' => 'Administrador'],

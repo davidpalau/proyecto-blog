@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Proyecto blog')
+@section('title', 'MyBlog')
 
 @section('content_header')
 <a class="btn btn-secondary btn-sm float-right " href="{{ route('admin.tags.create') }}">Nueva etiqueta</a>

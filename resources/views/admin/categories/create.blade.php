@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Proyecto blog')
+@section('title', 'MyBlog')
 
 @section('content_header')
     <h1>Crear nueva categoría</h1>
