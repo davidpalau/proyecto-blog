@@ -7,18 +7,17 @@
         </div>
     </div>
     </article>
-
-    <div class="flex flex-row container pr-5">
-
-        <div class="w-3/4 max-w-7xl p-4 rounded-lg bg-white border mr-6 border-gray-200 shadow sm:p-6">
+   <div class="">
+    <div class="lg:flex  container pr-5">
+        <div class="lg:w-3/4  max-w-7xl p-4 rounded-lg bg-white border mr-6 border-gray-200 shadow sm:p-6">
             <h1 class="text-4xl pl-6 font-bold text-gray-600 ">
                 {{ $post->name }}
             </h1>
             <div class="text-lg pl-6 text-gray-500">
                 <p class="text-justify lg:pr-6 col-span-4">{!! $post->extract !!}</p>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3">
-                <div class="col-span-3">
+            <div class="">
+                <div class="">
                     <figure class=""> <br>
                         <img class="w-full" src="{{ $post->image ? Storage::url($post->image->url) :asset('img/demo/5.jpg') }}" alt="">
                     </figure>
@@ -36,12 +35,12 @@
 
             </div>
         </div>
-                <aside class="w-1/3 max-w-7xl  sm:p-6">
-                <div class="ml-12">
-                    <h2 class="text-4xl pl-6 font-bold text-MyColor ">
+                <aside class="lg:w-1/3 w-5/6 max-w-7xl">
+                <div class="ml-12 ">
+                    <h2 class="text-4xl mt-3  lg:pl-6 font-bold text-MyColor ">
                         {{ $post->category->name }}
                     </h2>
-                    <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-1">
+                    <ul class="">
 
                         @foreach ($similares as $similar)
                             <br>
