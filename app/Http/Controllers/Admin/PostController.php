@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
-use App\Http\Requests\StorePostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
@@ -16,13 +15,13 @@ use Illuminate\Support\Facades\Storage;
 class PostController extends Controller
 {
 
-    // public function __construct()
-    // {
-    //     $this->middleware('can:admin.posts.index')->only('index');
-    //     $this->middleware('can:admin.posts.create')->only('create','store');
-    //     $this->middleware('can:admin.posts.edit')->only('edit','update');
-    //     $this->middleware('can:admin.posts.destroy')->only('destroy');
-    // }
+    public function __construct()
+    {
+        $this->middleware('can:admin.posts.index')->only('index');
+        $this->middleware('can:admin.posts.create')->only('create','store');
+        $this->middleware('can:admin.posts.edit')->only('edit','update');
+        $this->middleware('can:admin.posts.destroy')->only('destroy');
+    }
 
     /**
      * Display a listing of the resource.

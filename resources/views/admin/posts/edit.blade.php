@@ -2,6 +2,7 @@
 
 @section('title', 'MyBlog')
 
+
 @section('content_header')
 <h1>Editar post</h1>
 @stop
