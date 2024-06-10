@@ -3,7 +3,7 @@
 
 .article-container-cover{
     width: 100%;
-    height: 200px;
+    height: 500px;
     position: relative;
     margin-top: 80px;
     background-image: url("public/assets/img/img/articulos/img8.jpg");
@@ -24,7 +24,7 @@
 
 .container-info-cover{
     max-width: 800px;
-    height: 1500px;
+    height: 1000px;
     margin: auto;
     text-align: center;
     display: flex;

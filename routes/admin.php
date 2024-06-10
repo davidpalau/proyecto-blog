@@ -11,6 +11,9 @@ use App\Models\Category;
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
 Route::resource('categories', CategoryController::class)->names('admin.categories');
 
+use App\Http\Controllers\Admin\RoleController;
+Route::resource('roles', RoleController::class)->names('admin.roles');
+
 //  Rutas necesarias para realizar un crud de aminstración categorias
 
 Route::prefix('admin')->name('admin.')->group(function () {
