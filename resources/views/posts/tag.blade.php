@@ -6,10 +6,10 @@
 
         <div class="blog-container-cover">
             <div class="container-info-cover">
-                <h1>
+                <h1 class="tituloblog">
                  {{ $tag->name }}
                 </h1>
-                <p>{!! $tag->summary !!}</p>
+                <p class="parrafoblog">{!! $tag->summary !!}</p>
             </div>
         </div>
     </article>

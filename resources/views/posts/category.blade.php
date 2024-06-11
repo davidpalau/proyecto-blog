@@ -1,18 +1,18 @@
 <x-app-layout>
-                <!--Portada-->
+    <!--Portada-->
 
-                <div class="container-all" id="move-content">
+    <div class="container-all" id="move-content">
 
 
-                    <div class="blog-container-cover">
-                        <div class="container-info-cover">
-                            <h1>
-                              {{ $category->name }}
-                            </h1>
-                            <p>{{ $category->summary }}</p>
-                        </div>
-                    </div>
-                </article>
+        <div class="blog-container-cover">
+            <div class="container-info-cover">
+                <h1 class="tituloblog">
+                 {{ $category->name }}
+                </h1>
+                <p class="parrafoblog">{!! $category->summary !!}</p>
+            </div>
+        </div>
+    </article>
                 <div class="container-all" id="move-content">
                     <div class="posts">
                         @foreach ($posts as $post)

@@ -1,16 +1,12 @@
-<x-app-layout>
+
+ <x-app-layout>
     <!--Portada-->
 
-    <div class="container-all" id="move-content">
-        <div class="blog-container-cover">
-            <div class="container-info-cover">
-
-                <h1>!Todos los post en My Blog!</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aliquam quis fuga beatae blanditiis
-                    assumenda.</p>
-            </div>
+    <div>
+        <div class=" bg-MyColor m-5 p-8">
         </div>
-        </article>
+    </div>
+    </article>
    <div class="">
     <div class="lg:flex  container pr-5">
         <div class="lg:w-3/4  max-w-7xl p-4 rounded-lg bg-white border mr-6 border-gray-200 shadow sm:p-6">

@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="/css/articulo.css">
         <link rel="stylesheet" href="/css/blog.css">
 
-        <link rel="stylesheet" href="http://localhost/proyecto/4_blog/proyecto-blog/public/app.css">
+        <link rel="stylesheet" href="">
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
@@ -32,7 +32,7 @@
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="class="bg-MyColor">">
+                <header>
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
@@ -51,6 +51,7 @@
     </body>
 
 <br>
+
 <footer class=" dark:bg-MyColor">
     <div class="mx-auto w-full max-w-screen-xl">
       <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">

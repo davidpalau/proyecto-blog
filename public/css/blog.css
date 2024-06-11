@@ -1,11 +1,11 @@
 /*Portada*/
 
- .blog-container-cover{
+
+.blog-container-cover{
     width: 100%;
     height: 250px;
     position: relative;
     margin-top: 80px;
-    background-image: url("public/assets/img/img/articulos/img3.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -14,12 +14,12 @@
 .blog-container-cover:before{
     content: '';
     width: 100%;
-    height: 100px;
+    height: 100%;
     background: #3C88A3;;
     position: absolute;
     top: 0;
     left: 0;
-} */
+}
 
 .container-info-cover{
     max-width: 800px;
@@ -34,14 +34,14 @@
     z-index: 1;
 }
 
-.container-info-cover h1{
+.tituloblog{
     font-size: 60px;
     font-weight: 300;
     color: #fff;
     margin-top: 50px;
 }
 
-.container-info-cover p{
+.parrafoblog{
     color: #fff;
     font-size: 20px;
     font-weight: 200;
