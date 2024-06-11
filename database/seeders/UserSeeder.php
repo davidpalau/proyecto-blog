@@ -20,6 +20,19 @@ class UserSeeder extends Seeder
             'email' => 'palau.david@hotmail.com',
             'password' => bcrypt('20019020.g')
         ])->assignRole('admin');
+
+        User::create([
+            'name' => 'Ana García Blogger',
+            'email' => 'david@hotmail.com',
+            'password' => bcrypt('20019020.g')
+        ])->assignRole('blogger');
+
+        User::create([
+            'name' => 'Natalía Sin Perimos',
+            'email' => 'palau@hotmail.com',
+            'password' => bcrypt('20019020.g')
+        ]);
+
         User::factory(7)->create();
     }
 }
