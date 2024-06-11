@@ -48,8 +48,8 @@
                                 <a class="w-full" href="{{ route('posts.show', $similar) }}">
                                     <img class="w-full rounded-t-lg mt-18 object-cover object-center"
                                         src="{{ Storage::url($similar->image->url) }}" alt="">
-                                    <p class="inline-flex w-full px-3 rounded-b-lg bg-white border border-gray-200 shadow py-2 object-cover object-center">
-                                        {{ $similar->name }}
+                                    <p class="pl-6 font-semibold text-gray-600 inline-flex w-full px-3 rounded-b-lg bg-white border border-gray-200 shadow py-2 object-cover object-center">
+                                        {{ $similar->name }} <br>
                                         <span class="ml-1 mt-1 inline-flex bg-MyColor  text-white rounded-md px-2 py-1 text-sm font-normal"
                                           <a class="text-blue-400" href="{{ route('posts.show', $similar) }}">
                                             Leer más

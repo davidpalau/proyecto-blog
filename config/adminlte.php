@@ -63,9 +63,9 @@ return [
     |
     */
 
-    'logo' => '<b>Proyecto</b>BLOG',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo' => '<b>My</b>BLOG',
+    'logo_img' => '\img\Logo-ME-1.png',
+    'logo_img_class' => 'brand-image img-thumbnail elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'Admin Logo',
