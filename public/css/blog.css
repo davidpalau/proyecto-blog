@@ -1,9 +1,8 @@
-Portada
+/*Portada*/
 
-
-.blog-container-cover{
+ .blog-container-cover{
     width: 100%;
-    height: 300px;
+    height: 250px;
     position: relative;
     margin-top: 80px;
     background-image: url("public/assets/img/img/articulos/img3.jpg");
@@ -15,12 +14,12 @@ Portada
 .blog-container-cover:before{
     content: '';
     width: 100%;
-    height: 100%;
+    height: 100px;
     background: #3C88A3;;
     position: absolute;
     top: 0;
     left: 0;
-}
+} */
 
 .container-info-cover{
     max-width: 800px;
@@ -37,15 +36,16 @@ Portada
 
 .container-info-cover h1{
     font-size: 60px;
-    font-weight: 500;
+    font-weight: 300;
     color: #fff;
-    margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 .container-info-cover p{
     color: #fff;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 200;
+    margin-bottom: 200px;
 }
 
 /*Contenedor de categorias*/
@@ -98,9 +98,8 @@ ul i a:hover{
 .posts{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
-
     margin-top: 20px;
     padding: 20px;
 }

@@ -49,15 +49,15 @@ header{
     margin-right: 60px;
 }
 
-/* .menu nav{
+.menu nav{
     height: 100%;
-} */
+}
 
-/* .menu nav ul{
+ .menu nav ul{
     height: 100%;
     display: flex;
     list-style: none;
-} */
+}
 
 .menu nav ul li{
     height: 100%;

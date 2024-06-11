@@ -5,7 +5,7 @@
         <div class="blog-container-cover">
             <div class="container-info-cover">
 
-                <h1>!Todos los post en My Blog!</h1>
+                <h1 class="titulo">!Todos los post en My Blog!</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aliquam quis fuga beatae blanditiis
                     assumenda.</p>
             </div>
