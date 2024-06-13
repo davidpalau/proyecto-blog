@@ -16,9 +16,9 @@ class CategoryRequest extends FormRequest
         $category = $this->route()->parameter('category');
 
         $rules = [
-            'name' => 'required',
+            'name' => 'required|max:50',
             'slug' => 'required|unique:categories',
-            'summary' => 'required',
+            'summary' => 'required|max:255', // Limita el campo summary a 255 caracteres
         ];
 
         if ($category) {

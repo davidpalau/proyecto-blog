@@ -16,9 +16,9 @@ class TagRequest extends FormRequest
         $tag = $this->route()->parameter('tag');
 
         $rules = [
-            'name' => 'required',
+            'name' => 'required|max:50',
             'slug' => 'required|unique:tags',
-            'summary' => 'required',
+            'summary' => 'required|max:255', // Limita el campo summary a 255 caracteres
         ];
 
         if ($tag) {
