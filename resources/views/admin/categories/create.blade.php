@@ -32,7 +32,15 @@
             @enderror
 
         </div>
+        <div class="form-group">
+            {!! Form::label('summary', 'Descripción :') !!}
+            {!! Form::textarea('summary', null, ['class'=>'form-control']) !!}
 
+            @error('extract')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+
+        </div>
         {!! Form::submit('Crear categoria', ['class'=>'btn btn-primary']) !!}
 
         {!! Form::close() !!}
@@ -42,6 +50,7 @@
 
 
 @section('js')
+</script>
 <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
 
 <script>

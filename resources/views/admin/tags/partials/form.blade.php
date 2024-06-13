@@ -12,3 +12,12 @@
     <span class="text-danger">{{ $message }}</span>
 @enderror
 </div>
+<div class="form-group">
+    {!! Form::label('summary', 'Descripción :') !!}
+    {!! Form::textarea('summary', null, ['class'=>'form-control']) !!}
+
+    @error('extract')
+    <small class="text-danger">{{ $message }}</small>
+    @enderror
+
+</div>

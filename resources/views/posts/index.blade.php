@@ -1,7 +1,7 @@
 <x-app-layout>
     <!--Portada-->
 
-    <div class="container-all" id="move-content">
+    {{-- <div class="container-all" id="move-content"> --}}
         <div class="blog-container-cover">
             <div class="container-info-cover">
 
@@ -9,7 +9,7 @@
                 <p class="parrafoblog">!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aliquam quis fuga beatae blanditiis
                     assumenda.</p>
             </div>
-        </div>
+        {{-- </div> --}}
         </article>
         <div class="container-all" id="move-content">
             <div class="posts">

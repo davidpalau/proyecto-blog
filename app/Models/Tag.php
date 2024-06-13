@@ -14,7 +14,7 @@ class Tag extends Model
     }
     use HasFactory;
     //Relación muchos
-    protected $fillable = ['name', 'slug'];
+    protected $fillable = ['name', 'slug', 'summary', 'updated_at', 'created_at'];
 
     public function posts(){
         return $this->belongsToMany(Post::class);

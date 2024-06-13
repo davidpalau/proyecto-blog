@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use Illuminate\Http\Request;
+use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -46,16 +46,19 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         $request->validate([
             'name' => 'required',
-            'slug' => 'required|unique:categories'
+            'slug' => 'required|unique:categories',
+            'summary' => 'required',
         ]);
 
-        $category = Category::create($request->all());
+        $data = $request->all();
 
-        return redirect()->route('admin.categories.edit',$category)->with('info','La categoría se creo con éxito');
+        $category = Category::create($data);
+
+        return redirect()->route('admin.categories.edit', $category)->with('info', 'La categoría se creó con éxito');
     }
 
     /**
@@ -76,11 +79,12 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(CategoryRequest $request, Category $category)
     {
         $request->validate([
             'name' => 'required',
-            'slug' => "required|unique:categories,slug,$category->id"
+            'slug' => "required|unique:categories,slug,$category->id",
+            'summary' => 'required'
         ]);
 
         $category->update($request->all());

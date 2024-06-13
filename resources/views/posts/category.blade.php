@@ -1,7 +1,7 @@
 <x-app-layout>
     <!--Portada-->
 
-    <div class="container-all" id="move-content">
+    {{-- <div class="container-all" id="move-content"> --}}
 
 
         <div class="blog-container-cover">
@@ -11,7 +11,7 @@
                 </h1>
                 <p class="parrafoblog">{!! $category->summary !!}</p>
             </div>
-        </div>
+        {{-- </div> --}}
     </article>
                 <div class="container-all" id="move-content">
                     <div class="posts">

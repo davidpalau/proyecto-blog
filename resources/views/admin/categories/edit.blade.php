@@ -37,17 +37,23 @@
             @enderror
 
         </div>
+        <div class="form-group">
+            {!! Form::label('summary', 'Descripción :') !!}
+            {!! Form::textarea('summary', null, ['class'=>'form-control']) !!}
 
+            @error('extract')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+
+        </div>
         {!! Form::submit('Actualizar categoría', ['class'=>'btn btn-primary']) !!}
 
         {!! Form::close() !!}
     </div>
 </div>
 @stop
-
 @section('js')
 <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
-
 <script>
     $(document).ready( function() {
         $("#name").stringToSlug({

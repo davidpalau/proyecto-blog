@@ -14,7 +14,7 @@ class Category extends Model
     {
         return "slug";
     }
-    protected $fillable = ['name', 'slug'];
+    protected $fillable = ['name', 'slug', 'summary', 'updated_at', 'created_at'];
         // Relación uno a muchos
     public function posts(){
         return $this->hasMany(Post::class);

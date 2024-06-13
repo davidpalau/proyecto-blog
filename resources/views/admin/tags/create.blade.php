@@ -21,7 +21,6 @@
         </div>
     </div>
 @stop
-
 @section('js')
     <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.js') }}"></script>
     <script>

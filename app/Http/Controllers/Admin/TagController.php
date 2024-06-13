@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tag;
-use Illuminate\Http\Request;
+use App\Http\Requests\TagRequest;
 
 class TagController extends Controller
 {
@@ -35,18 +35,9 @@ class TagController extends Controller
      */
     public function create()
     {
-        $colors = [
-            'red'  => 'Color rojo',
-            'yellow' => 'Color amarillo',
-            'green' => 'Color verde',
-            'blue' => 'Color azul',
-            'indigo' => 'Color indigo',
-            'purple' => 'Color morado',
-            'pink' => 'Color rosado'
 
-        ];
 
-        return view('admin.tags.create',compact('colors'));
+        return view('admin.tags.create');
 
     }
 
@@ -56,18 +47,20 @@ class TagController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TagRequest $request)
     {
-
         $request->validate([
             'name' => 'required',
             'slug' => 'required|unique:tags',
-            'color' => 'required',
+            'summary' => 'required',
         ]);
 
-        $tag = Tag::create($request->all());
+        $data = $request->all();
 
-        return redirect()->route('admin.tags.edit',$tag)->with('info','La etiqueta se creo con éxito');
+
+        $tag = Tag::create($data);
+
+        return redirect()->route('admin.tags.edit', $tag)->with('info', 'La etiqueta se creo con éxito');
     }
 
     /**
@@ -78,18 +71,8 @@ class TagController extends Controller
      */
     public function edit(Tag $tag)
     {
-        $colors = [
-            'red'  => 'Color rojo',
-            'yellow' => 'Color amarillo',
-            'green' => 'Color verde',
-            'blue' => 'Color azul',
-            'indigo' => 'Color indigo',
-            'purple' => 'Color morado',
-            'pink' => 'Color rosado'
 
-        ];
-
-        return view('admin.tags.edit',compact('tag','colors'));
+        return view('admin.tags.edit',compact('tag'));
 
     }
 
@@ -100,12 +83,12 @@ class TagController extends Controller
      * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tag $tag)
+    public function update(TagRequest $request, Tag $tag)
     {
         $request->validate([
             'name' => 'required',
             'slug' => "required|unique:tags,slug,$tag->id",
-            'color' => 'required',
+            'summary' => 'required'
         ]);
 
         $tag->update($request->all());
