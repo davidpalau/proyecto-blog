@@ -5,8 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="http://localhost/blog/public/app.css">
-        <link rel="stylesheet" href="/css/principal.css">
-        <link rel="stylesheet" href="/css/articulo.css">
         <link rel="stylesheet" href="/css/blog.css">
         <script src="resources/js/app.js"></script>
         <title>{{ config('app.name', 'Laravel') }}</title>
